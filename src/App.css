@@ -5,3 +5,39 @@
 .navbar-container {
   width: 100%;
 }
+.carouselMain img {
+  height: 25em;
+  object-fit: cover;
+}
+.carousel-caption {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 25em;
+}
+.languageDropdown {
+  margin-left: 1em;
+  padding-inline: 0.5em;
+  padding-block: 0.1em;
+
+  /* background-color: rgba(137, 43, 226, 0.288); */
+  border-radius: 25em;
+}
+.flag {
+  width: 25px;
+  margin-left: auto;
+}
+.h1Main {
+  text-align: center;
+  margin-block: 1em;
+}
+.page404 {
+  height: 100vh;
+  background: url("https://i2.pickpik.com/photos/940/954/381/labradoodle-australian-labradoodle-puppy-puppy-cute-preview.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.page404Div {
+  height: 100%;
+  background-color: rgba(0, 35, 35, 0.186);
+  color: aliceblue;
+}
