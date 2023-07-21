@@ -1,9 +1,10 @@
 import React from "react";
+import Numbers from "./Numbers";
 
 export default function AboutUs() {
   return (
     <div>
-      <h1>US</h1>
+      <Numbers />
     </div>
   );
 }

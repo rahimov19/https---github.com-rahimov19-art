@@ -1,11 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Nav, NavDropdown, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [language, setLanguage] = useState("en");
+  const [navbarClass, setNavbarClass] = useState("navbar-top");
+  useEffect(() => {
+    window.onscroll = () => {
+      window.scrollY === 0
+        ? setNavbarClass("navbar-top")
+        : setNavbarClass("navbar");
+    };
+    return () => (window.onscroll = null);
+  }, []);
   return (
-    <Navbar expand="lg" sticky="top" className="bg-body-tertiary">
+    <Navbar expand="lg" sticky="top" className={navbarClass}>
       <Container className="navbar-container">
         <Navbar.Brand href="#home">ART</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

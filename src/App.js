@@ -5,6 +5,8 @@ import NavBar from "./Components/NavBar";
 import MainPage from "./Components/MainPage";
 import AboutUs from "./Components/AboutUs";
 import P404 from "./Components/P404";
+import Footer from "./Components/Footer";
+import Docs from "./Components/Docs";
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/documentations" element={<Docs />} />
+
           <Route path="*" element={<P404 />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );
