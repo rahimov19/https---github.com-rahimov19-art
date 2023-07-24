@@ -7,7 +7,7 @@ import * as formik from "formik";
 import * as yup from "yup";
 export default function JoinArtModal() {
   const [show, setShow] = useState(false);
-
+  const [type, setType] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [validated, setValidated] = useState(false);
@@ -21,7 +21,10 @@ export default function JoinArtModal() {
 
     terms: yup.bool().required().oneOf([true], "terms must be accepted"),
   });
-
+  const typeChangeHandler = (e) => {
+    setType(e.target.value);
+    console.log(type);
+  };
   const handleSubmit = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
@@ -103,27 +106,62 @@ export default function JoinArtModal() {
                     Please enter a phone number.
                   </Form.Control.Feedback>
                 </Form.Group>
-                <Form.Group
-                  as={Col}
-                  md="12"
-                  controlId="validationFormikUsername2"
-                >
-                  <Form.Label>Restaurant Name</Form.Label>
-                  <InputGroup hasValidation>
-                    <Form.Control
-                      type="text"
-                      placeholder="Restaurant Name"
-                      aria-describedby="inputGroupPrepend"
-                      name="restaurant"
-                      value={values.restaurant}
-                      onChange={handleChange}
-                      isInvalid={!!errors.restaurant}
-                    />
-                    <Form.Control.Feedback type="invalid" tooltip>
-                      {errors.restaurant}
-                    </Form.Control.Feedback>
-                  </InputGroup>
+                <Form.Group>
+                  <Form.Label>Select Role in ART</Form.Label>
+                  <Form.Select
+                    className="mb-3"
+                    aria-label="Default select example"
+                    value={type}
+                    onChange={(e) => typeChangeHandler(e)}
+                  >
+                    <option>Select role</option>
+                    <option value="owner">Restaurant Owner</option>
+                    <option value="employee">Employee</option>
+                  </Form.Select>
                 </Form.Group>
+                {type === "owner" ? (
+                  <Form.Group
+                    as={Col}
+                    md="12"
+                    controlId="validationFormikUsername2"
+                  >
+                    <Form.Label>Restaurant Name</Form.Label>
+                    <InputGroup hasValidation>
+                      <Form.Control
+                        type="text"
+                        placeholder="Restaurant Name"
+                        aria-describedby="inputGroupPrepend"
+                        name="restaurant"
+                        value={values.restaurant}
+                        onChange={handleChange}
+                        isInvalid={!!errors.restaurant}
+                      />
+                      <Form.Control.Feedback type="invalid" tooltip>
+                        {errors.restaurant}
+                      </Form.Control.Feedback>
+                    </InputGroup>
+                  </Form.Group>
+                ) : type === "employee" ? (
+                  <Form.Group
+                    as={Col}
+                    md="12"
+                    controlId="validationFormikUsername2"
+                  >
+                    <Form.Label>Previous Work Position</Form.Label>
+                    <InputGroup>
+                      <Form.Control
+                        type="text"
+                        placeholder="Position"
+                        aria-describedby="inputGroupPrepend"
+                        name="position"
+                        value={values.position}
+                        onChange={handleChange}
+                      />
+                    </InputGroup>
+                  </Form.Group>
+                ) : (
+                  <></>
+                )}
 
                 <Form.Group className="position-relative my-3">
                   <Form.Check
