@@ -13,7 +13,8 @@ export default function Docs() {
   ];
   return (
     <Container>
-      <Row>
+      <h2 className="docsH2">Our Documentations</h2>
+      <Row className="docsContainter">
         {links.map((l) => (
           <Col xl={4} lg={6} sm={12}>
             <a href={l}>

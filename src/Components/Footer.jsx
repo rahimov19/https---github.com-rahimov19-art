@@ -7,11 +7,7 @@ export default function Footer() {
     <Navbar expand="lg" className="bg-body-tertiary footerDiv">
       <Container className="d-flex justify-content-between px-5">
         <div>
-          <img
-            src="https://cdn.pixabay.com/photo/2017/03/16/21/18/logo-2150297_640.png"
-            alt=""
-            className="footerLogo"
-          />
+          <img src="/artlogo.png" alt="" className="footerLogo" />
         </div>
         <div className="d-flex">
           {" "}

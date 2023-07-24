@@ -17,6 +17,27 @@
 .navbar-top a {
   color: aliceblue;
 }
+.navbar-top a:hover {
+  color: rgb(200, 171, 42);
+}
+.navbar-top a:visited {
+  color: rgb(200, 171, 42);
+}
+.navbar-top .topButton {
+  display: none;
+}
+.topButton {
+  transition: 0.5s;
+  position: relative;
+  margin-right: 2em;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: black;
+}
+.topButton:hover {
+  background-color: black;
+  border-color: white;
+}
 .navbar-container {
   width: 100%;
 }
@@ -57,7 +78,10 @@
   color: aliceblue;
 }
 .footerLogo {
-  width: 50px;
+  width: 55px;
+  background-color: black;
+  background-blend-mode: hard-light;
+  padding: 7px;
 }
 
 .app {
@@ -92,6 +116,7 @@
 }
 .docImg {
   width: 100%;
+  height: 30em;
   object-fit: cover;
   margin: 1em;
 }
@@ -101,6 +126,7 @@ body {
   color: aliceblue;
 }
 body::before {
+  z-index: -999;
   background: url(/public/pattern.png);
   position: absolute;
   display: block;
@@ -112,4 +138,52 @@ body::before {
   content: "";
   opacity: 0.3;
   background-size: 25%;
+}
+.docsContainter {
+  background-color: rgb(91, 97, 94);
+  margin-block: 2em;
+  padding: 1em;
+  padding-right: 2em;
+}
+.docsH2 {
+  text-align: center;
+  margin-top: 1em;
+}
+.navBarLogo {
+  width: 40px;
+}
+.artModal div {
+  background: rgb(18, 17, 6);
+  background: linear-gradient(
+    302deg,
+    rgba(18, 17, 6, 1) 0%,
+    rgba(57, 45, 22, 1) 50%,
+    rgba(13, 0, 0, 1) 100%
+  );
+}
+#artModalHeader {
+  background: transparent !important;
+}
+.modal-body div {
+  background: transparent;
+}
+.joinButton {
+  all: unset;
+  background: transparent;
+  font-size: 1.1em;
+  margin-left: 1em;
+  border: 1px solid rgb(77, 63, 0);
+  padding: 0 0.4em;
+  border-radius: 7px;
+}
+.joinButton:hover {
+  background-color: transparent;
+}
+.newsH2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+.newsCard img {
+  height: 14em;
+  object-fit: cover;
 }
