@@ -31,25 +31,29 @@ export default function News() {
       <h2 className="newsH2">Some News</h2>
       <Row>
         <CardGroup>
-          {news.map((n) => (
-            <Card className="newsCard" key={n.id}>
-              <Link to={`/news/${n._id}`}>
-                {" "}
-                <Card.Img variant="top" src={n.image} />
-              </Link>
-              <Card.Body>
+          {news ? (
+            news.map((n) => (
+              <Card className="newsCard" key={n.id}>
                 <Link to={`/news/${n._id}`}>
-                  <Card.Title>{n.name}</Card.Title>
+                  {" "}
+                  <Card.Img variant="top" src={n.image} />
                 </Link>
-                <Card.Text>{n.description}</Card.Text>
-              </Card.Body>
-              <Card.Footer>
-                <small className="text-muted">
-                  {format(parseJSON(n.createdAt), "MM/dd/yyyy pp")}
-                </small>
-              </Card.Footer>
-            </Card>
-          ))}
+                <Card.Body>
+                  <Link to={`/news/${n._id}`}>
+                    <Card.Title>{n.name}</Card.Title>
+                  </Link>
+                  <Card.Text>{n.description}</Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                  <small className="text-muted">
+                    {format(parseJSON(n.createdAt), "MM/dd/yyyy pp")}
+                  </small>
+                </Card.Footer>
+              </Card>
+            ))
+          ) : (
+            <></>
+          )}
         </CardGroup>
       </Row>
     </Container>
