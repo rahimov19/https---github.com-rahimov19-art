@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function News() {
   const dispatch = useDispatch();
 
-  const news = useSelector((state) => state.posts.posts);
+  const news = useSelector((state) => state.posts);
   const fetchData = async () => {
     try {
       let response = await fetch(`${process.env.REACT_APP_BE_URL}/news`);
@@ -31,8 +31,8 @@ export default function News() {
       <h2 className="newsH2">Some News</h2>
       <Row>
         <CardGroup>
-          {news ? (
-            news.map((n) => (
+          {news.posts ? (
+            news.posts.map((n) => (
               <Card className="newsCard" key={n.id}>
                 <Link to={`/news/${n._id}`}>
                   {" "}

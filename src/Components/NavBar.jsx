@@ -15,7 +15,7 @@ import LoginModal from "./LoginModal";
 import UserOffcanvas from "./UserOffcanvas";
 
 export default function NavBar() {
-  const user = useSelector((state) => state.user.user.user);
+  const user = useSelector((state) => state.user);
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Back to Top
@@ -123,7 +123,11 @@ export default function NavBar() {
             )}
           </div>
         </Navbar.Collapse>
-        {user ? <UserOffcanvas user={user} /> : <LoginModal />}
+        {user.user.user ? (
+          <UserOffcanvas user={user.user.user} />
+        ) : (
+          <LoginModal />
+        )}
       </Container>
       <OverlayTrigger
         placement="bottom"
