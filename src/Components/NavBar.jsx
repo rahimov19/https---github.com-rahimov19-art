@@ -10,8 +10,12 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import JoinArtModal from "./JoinArtModal";
+import { useSelector } from "react-redux";
+import LoginModal from "./LoginModal";
+import UserOffcanvas from "./UserOffcanvas";
 
 export default function NavBar() {
+  const user = useSelector((state) => state.user.user.user);
   const renderTooltip = (props) => (
     <Tooltip id="button-tooltip" {...props}>
       Back to Top
@@ -53,8 +57,11 @@ export default function NavBar() {
           <div className="contactUsButton">
             {" "}
             <NavDropdown title="Contact Us" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">
+              <NavDropdown.Item href="tel:+992888885551">
                 +992888885551
+              </NavDropdown.Item>
+              <NavDropdown.Item href="mailto: email@art.tj">
+                email@art.tj
               </NavDropdown.Item>
             </NavDropdown>
           </div>
@@ -62,22 +69,14 @@ export default function NavBar() {
             {" "}
             {language === "en" ? (
               <NavDropdown title="EN" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("ru")}
-                >
-                  RU{" "}
+                <NavDropdown.Item href="#" onClick={() => setLanguage("ru")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png"
                     alt=""
                   />
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("tj")}
-                >
-                  TJ{" "}
+                <NavDropdown.Item href="#" onClick={() => setLanguage("tj")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Tajikistan.PNG"
@@ -87,22 +86,14 @@ export default function NavBar() {
               </NavDropdown>
             ) : language === "ru" ? (
               <NavDropdown title="RU" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("en")}
-                >
-                  EN{" "}
+                <NavDropdown.Item href="#" onClick={() => setLanguage("en")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg/2560px-Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg.png"
                     alt=""
                   />
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("tj")}
-                >
-                  TJ{" "}
+                <NavDropdown.Item href="#" onClick={() => setLanguage("tj")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Tajikistan.PNG"
@@ -112,22 +103,14 @@ export default function NavBar() {
               </NavDropdown>
             ) : language === "tj" ? (
               <NavDropdown title="TJ" id="basic-nav-dropdown">
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("en")}
-                >
-                  EN{" "}
+                <NavDropdown.Item href="#" onClick={() => setLanguage("en")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg/2560px-Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg.png"
                     alt=""
                   />
                 </NavDropdown.Item>
-                <NavDropdown.Item
-                  href="#action/3.1"
-                  onClick={() => setLanguage("ru")}
-                >
-                  RU
+                <NavDropdown.Item href="#" onClick={() => setLanguage("ru")}>
                   <img
                     className="flag"
                     src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png"
@@ -140,6 +123,7 @@ export default function NavBar() {
             )}
           </div>
         </Navbar.Collapse>
+        {user ? <UserOffcanvas user={user} /> : <LoginModal />}
       </Container>
       <OverlayTrigger
         placement="bottom"

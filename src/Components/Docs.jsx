@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 
 export default function Docs() {
-  const links = [
-    "https://media.gcflearnfree.org/content/596658ce8444e81d1ca6cde0_07_12_2017/businessformat_image2.jpg",
-    "https://aclanthology.org/thumb/C18-1014.jpg",
-    "https://data2.unhcr.org/images/documents/big_aa2c81585e808b644ef70587136c23601d33a2e9.jpg",
-    "https://classhall.com/wp-content/uploads/2018/06/office-documents-invoice.jpg",
-    "https://static.wikia.nocookie.net/scpcb_gamepedia/images/6/61/Doc008.jpg/revision/latest?cb=20131014012706",
-    "https://classhall.com/wp-content/uploads/2018/06/office-documents-invoice.jpg",
-    "https://static.wikia.nocookie.net/scpcb_gamepedia/images/6/61/Doc008.jpg/revision/latest?cb=20131014012706",
-  ];
+  const [links, setLinks] = useState([]);
+  const fetchLinks = async () => {
+    try {
+      let response = await fetch(`http://localhost:3001/news/docs`);
+      if (response.ok) {
+        let data = await response.json();
+        setLinks(data);
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    fetchLinks();
+  }, []);
+
   return (
     <Container>
       <h2 className="docsH2">Our Documentations</h2>
       <Row className="docsContainter">
         {links.map((l) => (
-          <Col xl={4} lg={6} sm={12}>
-            <a href={l}>
-              <img src={l} alt="doc" className="docImg" />
+          <Col xl={4} lg={6} sm={12} className="docsCol" key={l.id}>
+            <h3 className="docsTitle">{l.title}</h3>
+            <a href={l.image}>
+              <img src={l.image} alt="doc" className="docImg" />
             </a>
           </Col>
         ))}

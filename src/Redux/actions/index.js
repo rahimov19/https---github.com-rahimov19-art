@@ -4,6 +4,9 @@ export const SAVE_USERS = "SAVE_USERS";
 export const SAVE_USER = "SAVE_USER";
 export const SWITCH_LANGUAGE = "SWITCH_LANGUAGE";
 export const SAVE_LANGUAGES = "SAVE_LANGUAGES";
+export const FETCH_NEWS = "FETCH_NEWS";
+
+// const beUrl = "http://localhost:3001";
 
 export const getPostsAction = (posts) => {
   return {
@@ -11,6 +14,7 @@ export const getPostsAction = (posts) => {
     payload: posts,
   };
 };
+
 export const switchLanguageAction = (language) => {
   return {
     type: SWITCH_LANGUAGE,

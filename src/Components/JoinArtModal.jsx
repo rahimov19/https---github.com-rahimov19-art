@@ -5,13 +5,14 @@ import Modal from "react-bootstrap/Modal";
 import { Col, Form, InputGroup } from "react-bootstrap";
 import * as formik from "formik";
 import * as yup from "yup";
+import { useSelector } from "react-redux";
 export default function JoinArtModal() {
   const [show, setShow] = useState(false);
   const [type, setType] = useState("");
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const [validated, setValidated] = useState(false);
-
+  const user = useSelector((state) => state.user.user);
   const { Formik } = formik;
 
   const schema = yup.object().shape({
@@ -36,7 +37,11 @@ export default function JoinArtModal() {
   };
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="joinButton">
+      <Button
+        variant="primary"
+        onClick={handleShow}
+        className={user ? "d-none" : "joinButton"}
+      >
         Join ART
       </Button>
 

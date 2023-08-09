@@ -3,6 +3,7 @@ import { SAVE_USER } from "../actions";
 
 const initialState = {
   users: {},
+  user: {},
 };
 
 const userReducer = (state = initialState, action) => {
