@@ -47,7 +47,7 @@ export default function AddNewUserModal(props) {
       },
     };
     try {
-      const res = await fetch(`http://localhost:3001/users`, options);
+      const res = await fetch(`${process.env.REACT_APP_BE_URL}/users`, options);
     } catch (error) {
       console.log(error);
     }

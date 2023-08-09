@@ -36,11 +36,14 @@ export default function AddNewBannerModal(props) {
       },
     };
     try {
-      const res = await fetch(`http://localhost:3001/news/banners`, options);
+      const res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/news/banners`,
+        options
+      );
       const idObj = await res.json();
       console.log(idObj);
       const imgRes = await fetch(
-        `http://localhost:3001/news/banners/${idObj._id}/image`,
+        `${process.env.REACT_APP_BE_URL}/news/banners/${idObj._id}/image`,
         options2
       );
     } catch (error) {

@@ -35,11 +35,14 @@ export default function AddNewDocsModal(props) {
       },
     };
     try {
-      const res = await fetch(`http://localhost:3001/news/docs`, options);
+      const res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/news/docs`,
+        options
+      );
       const idObj = await res.json();
       console.log(idObj);
       const imgRes = await fetch(
-        `http://localhost:3001/news/docs/${idObj._id}/image`,
+        `${process.env.REACT_APP_BE_URL}/news/docs/${idObj._id}/image`,
         options2
       );
     } catch (error) {

@@ -5,7 +5,9 @@ export default function CarouselComponent() {
   const [banners, setBanners] = useState([]);
   const fetchBanners = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news/banners`);
+      let response = await fetch(
+        `${process.env.REACT_APP_BE_URL}/news/banners`
+      );
       if (response.ok) {
         let data = await response.json();
         setBanners(data);

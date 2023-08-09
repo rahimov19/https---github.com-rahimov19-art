@@ -21,7 +21,10 @@ export default function LoginModal() {
       },
     };
     try {
-      const res = await fetch("http://localhost:3001/users/login", options);
+      const res = await fetch(
+        `${process.env.REACT_APP_BE_URL}/users/login`,
+        options
+      );
       if (res.ok) {
         const response = await res.json();
         const user = { user: response.user, token: response.accessToken };

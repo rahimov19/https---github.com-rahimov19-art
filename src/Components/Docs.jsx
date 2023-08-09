@@ -5,7 +5,7 @@ export default function Docs() {
   const [links, setLinks] = useState([]);
   const fetchLinks = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news/docs`);
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news/docs`);
       if (response.ok) {
         let data = await response.json();
         setLinks(data);

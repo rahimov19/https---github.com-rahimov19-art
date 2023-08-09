@@ -36,11 +36,11 @@ export default function AddNewNewsModal(props) {
       },
     };
     try {
-      const res = await fetch(`http://localhost:3001/news`, options);
+      const res = await fetch(`${process.env.REACT_APP_BE_URL}/news`, options);
       const idObj = await res.json();
       console.log(idObj);
       const imgRes = await fetch(
-        `http://localhost:3001/news/${idObj._id}/picture`,
+        `${process.env.REACT_APP_BE_URL}/news/${idObj._id}/picture`,
         options2
       );
     } catch (error) {

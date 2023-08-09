@@ -28,7 +28,7 @@ export default function AddNewAdminModal(props) {
     };
 
     try {
-      const res = await fetch(`http://localhost:3001/users`, options);
+      const res = await fetch(`${process.env.REACT_APP_BE_URL}/users`, options);
       const idObj = await res.json();
       console.log(idObj);
     } catch (error) {

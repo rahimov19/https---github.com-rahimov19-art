@@ -12,7 +12,7 @@ export default function News() {
   const news = useSelector((state) => state.posts.posts);
   const fetchData = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news`);
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news`);
       if (response.ok) {
         let data = await response.json();
         dispatch(getPostsAction(data));

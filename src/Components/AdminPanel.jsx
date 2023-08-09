@@ -32,7 +32,7 @@ export default function AdminPanel() {
       },
     };
     try {
-      const endpoint = `http://localhost:3001/${link.link}/${a._id}`;
+      const endpoint = `${process.env.REACT_APP_BE_URL}/${link.link}/${a._id}`;
       const response = await fetch(endpoint, options);
       if (response.ok) {
         alert(`Information is deleted successfully`);
@@ -50,7 +50,7 @@ export default function AdminPanel() {
 
   const fetchUsers = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/users`, {
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/users`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -71,7 +71,7 @@ export default function AdminPanel() {
 
   const fetchNews = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news`);
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news`);
       if (response.ok) {
         let data = await response.json();
 
@@ -86,7 +86,9 @@ export default function AdminPanel() {
 
   const fetchBanners = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news/banners`);
+      let response = await fetch(
+        `${process.env.REACT_APP_BE_URL}/news/banners`
+      );
       if (response.ok) {
         let data = await response.json();
         setBanners(data);
@@ -100,7 +102,7 @@ export default function AdminPanel() {
 
   const fetchDocs = async () => {
     try {
-      let response = await fetch(`http://localhost:3001/news/docs`);
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news/docs`);
       if (response.ok) {
         let data = await response.json();
 
