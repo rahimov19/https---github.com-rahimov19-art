@@ -123,7 +123,7 @@ export default function NavBar() {
             )}
           </div>
         </Navbar.Collapse>
-        {user.user.user ? (
+        {user && user.user && user.user.user ? (
           <UserOffcanvas user={user.user.user} />
         ) : (
           <LoginModal />

@@ -31,7 +31,7 @@ export default function News() {
       <h2 className="newsH2">Some News</h2>
       <Row>
         <CardGroup>
-          {news.posts ? (
+          {news && news.posts ? (
             news.posts.map((n) => (
               <Card className="newsCard" key={n.id}>
                 <Link to={`/news/${n._id}`}>
