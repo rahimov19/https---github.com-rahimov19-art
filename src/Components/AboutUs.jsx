@@ -1,23 +1,42 @@
 import React from "react";
 import Numbers from "./Numbers";
 import { Col, Container, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
 
 export default function AboutUs() {
+  const language = useSelector((state) => state.languages.currentLanguage);
+  const languagePack = {
+    ru: {
+      aboutUsH2: "О Нас",
+      weAreArt: "Мы АРТ",
+      artArticle:
+        "Ассоциация рестораторов Таджикистана (АРТ), недавно созданная некоммерческая организация, нацелена на поддержку развития ресторанного бизнеса в Таджикистане. Официально зарегистрирована 31 августа 2020 г. ",
+    },
+    en: {
+      aboutUsH2: "About Us",
+      weAreArt: "We Are ART",
+      artArticle:
+        "The Association of Restaurateurs of Tajikistan (ART), a newly established non-profit organization, aims to support the development of the restaurant business in Tajikistan. It was officially registered on August 31, 2020.",
+    },
+    tj: {
+      aboutUsH2: "Дар Бораи Мо",
+      weAreArt: "Мо АРТ хастем",
+      artArticle:
+        "Ассотсиатсияи тарабхонаҳои Тоҷикистон (АРТ), як созмони ғайритиҷоратии тозатаъсис, ҳадафи дастгирии рушди тиҷорати тарабхонаҳо дар Тоҷикистон аст. Он расман 31 августи соли 2020 ба қайд гирифта шудааст.",
+    },
+  };
   return (
     <div>
-      <Container className="my-4">
+      <Container className="my-4" id="aboutUs">
         <Row>
-          <Col xs={6} className="d-flex justify-content-center">
+          <h2 className="aboutUsh2">{languagePack[language].aboutUsH2}</h2>
+          <Col md={6} xs={12} className="d-flex justify-content-center">
             <img src="/artlogo.png" alt="logo" className="aboutUsPics" />
           </Col>
-          <Col xs={6}>
+          <Col md={6} xs={12} className="mt-4">
             {" "}
-            <h2>We Are ART</h2>{" "}
-            <p>
-              Tajik Association of Restaurators (ART) is a something with
-              something i need really inetersting text to fill it up and bla bla
-              bla
-            </p>
+            <h2>{languagePack[language].weAreArt}</h2>{" "}
+            <p>{languagePack[language].artArticle}</p>
           </Col>
         </Row>
       </Container>

@@ -22,10 +22,15 @@ export default function AdminPanel() {
   const [admins, setAdmins] = useState([]);
   const [docs, setDocs] = useState([]);
 
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+    }
+  }, []);
+
   const deleteHandler = async (a, link) => {
     const options = {
       method: "DELETE",
-
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
@@ -115,7 +120,7 @@ export default function AdminPanel() {
     }
   };
   useEffect(() => {
-    if (user.userType !== "admin") {
+    if (user && user.userType !== "admin") {
       navigate("/");
     }
     fetchBanners();
@@ -133,31 +138,31 @@ export default function AdminPanel() {
                 onClick={() => setActivePage(users)}
                 className={activePage === users ? "liSelected" : ""}
               >
-                Users
+                Юзеры
               </li>
               <li
                 onClick={() => setActivePage(news)}
                 className={activePage === news ? "liSelected" : ""}
               >
-                News
+                Новости
               </li>
               <li
                 onClick={() => setActivePage(banners)}
                 className={activePage === banners ? "liSelected" : ""}
               >
-                Banner
+                Баннеры
               </li>
               <li
                 onClick={() => setActivePage(docs)}
                 className={activePage === docs ? "liSelected" : ""}
               >
-                Docs
+                Документы
               </li>
               <li
                 onClick={() => setActivePage(admins)}
                 className={activePage === admins ? "liSelected" : ""}
               >
-                Admins
+                Админы
               </li>
             </ul>
           </Col>
@@ -261,7 +266,7 @@ export default function AdminPanel() {
                     <Col className="adminCol">{a.description}</Col>
                     <Col className="adminCol">{a.language}</Col>
                     <Col className="adminCol">
-                      <img src={a.image} alt="" className="adminPic" />
+                      <img src={a.images[0]} alt="" className="adminPic" />
                     </Col>
 
                     <Col className="adminCol">

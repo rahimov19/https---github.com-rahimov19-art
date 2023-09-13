@@ -2,6 +2,9 @@
   margin-left: auto;
   width: auto;
 }
+html {
+  scroll-behavior: smooth;
+}
 .navbar {
   background-color: rgb(200, 171, 42);
   color: black;
@@ -29,7 +32,7 @@
 .topButton {
   transition: 0.5s;
   position: relative;
-  margin-right: 2em;
+  margin-inline: 1em;
   cursor: pointer;
   background-color: transparent;
   border-color: black;
@@ -50,10 +53,11 @@
   border-radius: 25em;
 }
 .languageDropdown {
-  margin-left: 1em;
+  margin-inline: 1em;
   padding-inline: 0.5em;
   padding-block: 0.1em;
-
+  display: flex;
+  justify-content: end;
   /* background-color: rgba(137, 43, 226, 0.288); */
   border-radius: 25em;
 }
@@ -266,4 +270,165 @@ body::before {
 }
 .newsRow {
   height: 25em;
+}
+.contactItem {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+.aboutUsh2 {
+  text-align: center;
+  margin-bottom: 1.5em;
+  font-size: 2.5em;
+}
+.active {
+  color: inherit !important;
+}
+.partnersCol {
+  width: 20%;
+  height: 8em;
+  background-color: antiquewhite;
+  color: black;
+  border: 1px solid black;
+  object-fit: cover;
+  transition: 0.5s;
+}
+.partnersRow {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.partnersCol:hover {
+  transform: scale(1.1);
+  transition: 0.5s;
+}
+#partners,
+#docs,
+#aboutUs {
+  scroll-margin-block-start: 4em;
+}
+#partners h2 {
+  text-align: center;
+  margin-block: 1em;
+}
+.footerSocialLogo {
+  width: 30px;
+}
+.subscribeContainer {
+  background-color: rgba(36, 99, 50, 1);
+  height: 10em;
+}
+.emailCOl {
+  position: relative;
+  height: 10em;
+  margin-left: auto;
+  z-index: 2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.emailCOl:before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 150%;
+  top: 0%;
+  right: -30%;
+  z-index: -1;
+  background: url(/public/pattern.png) 0 0 repeat;
+  background-size: 50%;
+  transform: rotate(-30deg);
+}
+.emailCOl input {
+  height: 2em;
+  width: 50%;
+}
+.textSubsCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.newsImages {
+  width: 100%;
+  height: 13em;
+  object-fit: cover;
+}
+.coursesH4 {
+  text-align: center;
+}
+.coursesP {
+  text-align: center;
+  font-size: 1.5em;
+  border: 1px solid rgb(156, 130, 13);
+  padding-block: 1em;
+  border-radius: 5px;
+}
+.coursesContainer {
+  background: rgb(18, 17, 6);
+  background: linear-gradient(
+    302deg,
+    rgba(18, 17, 6, 1) 0%,
+    rgba(57, 45, 22, 1) 50%,
+    rgba(13, 0, 0, 1) 100%
+  );
+  padding: 1em;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.anketaButton {
+  background-color: rgba(36, 99, 50, 1);
+  border: 1px solid rgb(115, 97, 16);
+  padding-inline: 3em;
+  padding-block: 0.5em;
+  transition: 0.5s;
+}
+.anketaButton:hover {
+  background-color: rgb(115, 97, 16);
+  border: 1px solid rgba(36, 99, 50, 1);
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+.cardNewsBody {
+  display: -webkit-box;
+  max-width: 100%;
+  height: 12em;
+  margin-bottom: 0.5em;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.navbar-toggler {
+  background-color: aliceblue;
+}
+.navbar-nav {
+  text-align: center;
+}
+.navbar-collapse.show {
+  margin-top: 1em;
+  background-color: rgb(27, 27, 27);
+  border-radius: 20px;
+  border: 1px solid white;
+  padding: 1em;
+}
+.navbar-collapse.show.bottom {
+  background-color: transparent;
+
+  border: none;
+}
+.navbarRow {
+  width: auto;
+  display: flex;
+  justify-content: space-between;
+}
+.userButton {
+  background-color: transparent;
+  border-color: rgb(115, 97, 16);
+}
+.userButton:hover {
+  background-color: rgb(115, 97, 16);
+  border-color: rgb(18, 17, 6);
 }

@@ -20,7 +20,7 @@ export default function UserOffcanvas(props) {
   const handleShow = () => setShow(true);
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="primary" onClick={handleShow} className="userButton">
         {props.user.name}
       </Button>
 

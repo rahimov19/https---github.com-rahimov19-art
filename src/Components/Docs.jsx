@@ -21,7 +21,7 @@ export default function Docs() {
   }, []);
 
   return (
-    <Container>
+    <Container id="docs">
       <h2 className="docsH2">Our Documentations</h2>
       <Row className="docsContainter">
         {links ? (

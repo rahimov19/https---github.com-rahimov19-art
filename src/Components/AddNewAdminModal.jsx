@@ -41,12 +41,12 @@ export default function AddNewAdminModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="modalBtn">
-        Add new Admin
+        Добавить Администратора
       </Button>
 
       <Modal show={show} onHide={handleClose} className="artModal">
         <Modal.Header closeButton>
-          <Modal.Title>Add new Admin</Modal.Title>
+          <Modal.Title>Добавить нового Администратора</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {" "}
@@ -56,7 +56,7 @@ export default function AddNewAdminModal(props) {
               controlId="exampleForm.ControlInput1"
               onChange={(e) => setName(e.target.value)}
             >
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Имя</Form.Label>
               <Form.Control type="email" placeholder="Add Name" />
             </Form.Group>
             <Form.Group
@@ -72,17 +72,17 @@ export default function AddNewAdminModal(props) {
               controlId="formBasicPassword"
               onChange={(e) => setPassword(e.target.value)}
             >
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Пароль</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
           </Form>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Закрыть
           </Button>
           <Button variant="primary" onClick={submitHandler}>
-            Add new Admin
+            Добавить
           </Button>
         </Modal.Footer>
       </Modal>

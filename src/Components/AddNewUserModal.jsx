@@ -58,7 +58,7 @@ export default function AddNewUserModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="modalBtn">
-        Add New User
+        Добавить нового пользователя
       </Button>
 
       <Modal show={show} onHide={handleClose} className="artModal" noValidate>

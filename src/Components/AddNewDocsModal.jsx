@@ -55,12 +55,12 @@ export default function AddNewDocsModal(props) {
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="modalBtn">
-        Add new Document
+        Добавить новый документ
       </Button>
 
       <Modal show={show} onHide={handleClose} className="artModal">
         <Modal.Header closeButton>
-          <Modal.Title>Add new Document</Modal.Title>
+          <Modal.Title>Добавить новый документ</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           {" "}
@@ -70,7 +70,7 @@ export default function AddNewDocsModal(props) {
               controlId="exampleForm.ControlInput1"
               onChange={(e) => setTitle(e.target.value)}
             >
-              <Form.Label>Title</Form.Label>
+              <Form.Label>Название</Form.Label>
               <Form.Control type="email" placeholder="Add Title" />
             </Form.Group>
 
@@ -78,13 +78,13 @@ export default function AddNewDocsModal(props) {
               aria-label="Default select example"
               onChange={(e) => setLanguage(e.target.value)}
             >
-              <option>Language</option>
+              <option>Язык</option>
               <option value="ru">Ru</option>
               <option value="tj">Tj</option>
               <option value="en">En</option>
             </Form.Select>
             <Form.Group controlId="image">
-              <Form.Label>Image</Form.Label>
+              <Form.Label>Изображение</Form.Label>
               <Form.Control
                 type="file"
                 placeholder="Enter your Image"
@@ -95,10 +95,10 @@ export default function AddNewDocsModal(props) {
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
-            Close
+            Закрыть
           </Button>
           <Button variant="primary" onClick={submitHandler}>
-            Add new Document
+            Добавить
           </Button>
         </Modal.Footer>
       </Modal>
