@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
@@ -9,8 +10,15 @@ import Footer from "./Components/Footer";
 import Docs from "./Components/Docs";
 import AdminPanel from "./Components/AdminPanel";
 import NewsPage from "./Components/NewsPage";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { switchLanguageAction } from "./Redux/actions";
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(switchLanguageAction("ru"));
+  }, []);
   return (
     <div className="App">
       <BrowserRouter>

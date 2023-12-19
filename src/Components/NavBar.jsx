@@ -22,6 +22,7 @@ export default function NavBar() {
   const location = useLocation();
   const languagePack = {
     ru: {
+      logo: "/artlogo.png",
       home: "Начало",
       aboutUs: "О Нас",
       ourPartners: "Наши Партнеры",
@@ -30,6 +31,7 @@ export default function NavBar() {
       backToTop: "Вверх",
     },
     en: {
+      logo: "/artLogoEng.png",
       home: "Home",
       aboutUs: "About Us",
       ourPartners: "Our Partners",
@@ -38,6 +40,7 @@ export default function NavBar() {
       backToTop: "Back to Top",
     },
     tj: {
+      logo: "/artlogoTaj.png",
       home: "Аввал",
       aboutUs: "Дар Бораи Мо",
       ourPartners: "Партнерхои Мо",
@@ -86,7 +89,11 @@ export default function NavBar() {
     >
       <Container className="navbar-container">
         <Link to="/" className="me-5">
-          <img src="/artlogo.png" alt="logo" className="navBarLogo" />
+          <img
+            src={languagePack[language].logo}
+            alt="logo"
+            className="navBarLogo"
+          />
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

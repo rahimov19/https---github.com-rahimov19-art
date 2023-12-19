@@ -37,16 +37,19 @@ export default function Courses() {
       </Row>
       <Row>
         <Col xs={6} md={3}>
+          <img src="/barista.jpg" alt="barista" className="courseImg" />
           <p className="coursesP"> {languagePack[language].barista}</p>
         </Col>
         <Col xs={6} md={3}>
+          <img src="/cook.jpg" alt="cook" className="courseImg" />
           <p className="coursesP"> {languagePack[language].cook} </p>
         </Col>
         <Col xs={6} md={3}>
+          <img src="/confector.jpg" alt="confector" className="courseImg" />
           <p className="coursesP"> {languagePack[language].conditer} </p>
         </Col>
         <Col xs={6} md={3}>
-          {" "}
+          <img src="/waiter.jpg" alt="waiter" className="courseImg" />
           <p className="coursesP"> {languagePack[language].waiter}</p>
         </Col>
         <Col xs={12} className="d-flex justify-content-center mt-3">

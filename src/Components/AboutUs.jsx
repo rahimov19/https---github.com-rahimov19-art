@@ -7,18 +7,21 @@ export default function AboutUs() {
   const language = useSelector((state) => state.languages.currentLanguage);
   const languagePack = {
     ru: {
+      logo: "/artlogo.png",
       aboutUsH2: "О Нас",
       weAreArt: "Мы АРТ",
       artArticle:
         "Ассоциация рестораторов Таджикистана (АРТ), недавно созданная некоммерческая организация, нацелена на поддержку развития ресторанного бизнеса в Таджикистане. Официально зарегистрирована 31 августа 2020 г. ",
     },
     en: {
+      logo: "/artLogoEng.png",
       aboutUsH2: "About Us",
       weAreArt: "We Are ART",
       artArticle:
         "The Association of Restaurateurs of Tajikistan (ART), a newly established non-profit organization, aims to support the development of the restaurant business in Tajikistan. It was officially registered on August 31, 2020.",
     },
     tj: {
+      logo: "/artlogoTaj.png",
       aboutUsH2: "Дар Бораи Мо",
       weAreArt: "Мо АРТ хастем",
       artArticle:
@@ -31,7 +34,11 @@ export default function AboutUs() {
         <Row>
           <h2 className="aboutUsh2">{languagePack[language].aboutUsH2}</h2>
           <Col md={6} xs={12} className="d-flex justify-content-center">
-            <img src="/artlogo.png" alt="logo" className="aboutUsPics" />
+            <img
+              src={languagePack[language].logo}
+              alt="logo"
+              className="aboutUsPics"
+            />
           </Col>
           <Col md={6} xs={12} className="mt-4">
             {" "}

@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import CarouselComponent from "./CarouselComponent";
 import News from "./News";
 import AboutUs from "./AboutUs";
-import Docs from "./Docs";
+
 import PartnersCarousel from "./PartnersCarousel";
 import EmailNews from "./EmailNews";
 import { useSelector } from "react-redux";
