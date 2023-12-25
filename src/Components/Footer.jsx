@@ -5,32 +5,58 @@ import { useSelector } from "react-redux";
 export default function Footer() {
   const language = useSelector((state) => state.languages.currentLanguage);
   const languagePack = {
-    ru: { logo: "/artlogo.png" },
-    en: { logo: "/artLogoEng.png" },
-    tj: { logo: "/artlogoTaj.png" },
+    ru: {
+      logo: "/artlogo.png",
+      address: "Адрес",
+      street: "ул. С. Айни 84",
+      city: "734005 Душанбе",
+      taj: "Таджикистан",
+      schedule: "Рабочие часы:",
+      days: "Пн-Пт 9:00-18:00",
+      art2023: "АРТ 2023(с)",
+      follow: "Подпишитесь на нас:",
+    },
+    en: {
+      logo: "/artLogoEng.png",
+      address: "Address",
+      street: "S. Ayni st. 84",
+      city: "734005 Dushanbe",
+      taj: "Tajikistan",
+      schedule: "Working Schedule",
+      days: "Monday-Friday 9:00-18:00",
+      art2023: "ART 2023(c)",
+      follow: "Follow Us",
+    },
+    tj: {
+      logo: "/artlogoTaj.png",
+      address: "Суроға",
+      street: "к. С. Айни 84",
+      city: "734005 Душанбе",
+      taj: "Точикистон",
+      schedule: "Ҷадвали кор",
+      days: "Душанбе-Ҷумъа 9:00-18:00",
+      art2023: "АТТ 2023 (с)",
+      follow: "Моро пайгирӣ намоед",
+    },
   };
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary footerDiv">
+      <Navbar expand="lg" className="footerDiv">
         <div className="footerDivBg"></div>
+        <div className="footerDivBg2"></div>
+
         <Container className="d-flex justify-content-between px-5">
           <Row className="w-100">
             <Col xs={12} className="row">
               <Col xs={6}>
-                <h4>adress:</h4>
-                <p>brbrbr st. 12</p>
-                <p>734000 Dushanbe</p>
-                <p>Tajikistan</p>
+                <h4>{languagePack[language].address}</h4>
+                <p>{languagePack[language].street}</p>
+                <p>{languagePack[language].city}</p>
+                <p>{languagePack[language].taj}</p>
               </Col>
               <Col xs={6} className="grafikDiv">
-                <h4>grdafik</h4>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
-                <p>mn 10:00-11:00</p>
+                <h4>{languagePack[language].schedule}</h4>
+                <p>{languagePack[language].days}</p>
               </Col>
             </Col>
             <Col xs={12} className="d-flex justify-content-between">
@@ -40,39 +66,27 @@ export default function Footer() {
                   alt=""
                   className="footerLogo"
                 />
-                <p className="ms-3 mt-3">ART 2023(c)</p>
+                <p className="ms-3 mt-3">{languagePack[language].art2023}</p>
               </div>
               <div className="d-flex align-items-center">
-                <h5>Follow Us: </h5>{" "}
+                <h5>{languagePack[language].follow} </h5>{" "}
                 <Nav.Link
                   className="nav-link mx-3"
                   href="https://www.instagram.com/art__tajikistan/"
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1024px-Instagram_logo_2022.svg.png"
-                    alt=""
-                    className="footerSocialLogo"
-                  />
+                  <img src="/ig.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>
                 <Nav.Link
                   className="nav-link mx-3"
                   href="https://www.facebook.com/arip.tjk"
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
-                    alt=""
-                    className="footerSocialLogo"
-                  />
+                  <img src="/fb.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>
                 <Nav.Link
                   className="nav-link mx-3"
                   href="https://www.linkedin.com"
                 >
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/LinkedIn_logo_initials.png/800px-LinkedIn_logo_initials.png"
-                    alt=""
-                    className="footerSocialLogo"
-                  />
+                  <img src="/li.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>
               </div>
             </Col>

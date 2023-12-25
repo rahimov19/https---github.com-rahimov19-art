@@ -14,7 +14,7 @@ export default function MainPage() {
   const languagePack = {
     ru: { welcome: "Добро пожаловать в АРТ" },
     en: { welcome: "Welcome to ART" },
-    tj: { welcome: "Хуш Омадед ба АРТ" },
+    tj: { welcome: "Хуш Омадед ба АТТ" },
   };
   return (
     <Container className="my-4">

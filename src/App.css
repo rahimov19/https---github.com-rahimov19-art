@@ -454,12 +454,13 @@ body::before {
   margin-block: 1em;
 }
 .footerDiv {
+  color: aliceblue;
   position: relative;
-  background-color: antiquewhite;
+  background-color: transparent;
 }
 .footerDivBg {
-  animation: bgmove 80s infinite;
-  z-index: 0;
+  animation: bgmove 150s infinite;
+  z-index: -1;
   background: url(/public/pattern.png);
   position: absolute;
   display: block;
@@ -471,6 +472,18 @@ body::before {
   content: "";
   opacity: 0.3;
   background-size: 25%;
+}
+.footerDivBg2 {
+  z-index: -2;
+  background-color: rgba(36, 99, 50, 1);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+
+  content: "";
 }
 @keyframes bgmove {
   50% {
