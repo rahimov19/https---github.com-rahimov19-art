@@ -25,11 +25,11 @@ export default function EmailNews() {
   return (
     <Container className="subscribeContainer">
       <Row>
-        <Col className="textSubsCol">
+        <Col xs={12} md={6} className="textSubsCol">
           <h5>{languagePack[language].newsSubscription}</h5>
           <h2>{languagePack[language].subscribe}</h2>
         </Col>
-        <Col className="emailCOl">
+        <Col xs={12} md={6} className="emailCOl">
           <input
             type="email"
             name="email"

@@ -21,17 +21,19 @@ export default function NewsPage() {
     <>
       <Container className="d-flex flex-column justify-content-between my-4">
         <Row className="newsRow">
-          <Col xs={12} md={6}>
-            {activeNews.video ? (
+          {activeNews.video ? (
+            <Col xs={12} className="d-flex justify-content-center">
               <ReactPlayer url={activeNews.video} />
-            ) : activeNews.images ? (
+            </Col>
+          ) : activeNews.images ? (
+            <Col xs={12} md={6}>
               <img src={activeNews.images[0]} alt="" className="newsImg" />
-            ) : (
-              <></>
-            )}
-          </Col>
-          <Col xs={12} md={6}>
-            <h3>{activeNews.name}</h3>
+            </Col>
+          ) : (
+            <></>
+          )}
+          <Col className="d-flex flex-column align-items-center">
+            <h3 className="mt-3">{activeNews.name}</h3>
             <p>{activeNews.description}</p>
           </Col>
         </Row>
@@ -41,7 +43,7 @@ export default function NewsPage() {
               <Col xs={12} md={6} lg={3}>
                 <a href={i}>
                   {" "}
-                  <img src={i} alt="images" className="newsImages" />
+                  <img src={i} alt="images" className="newsImages my-2" />
                 </a>
               </Col>
             ))

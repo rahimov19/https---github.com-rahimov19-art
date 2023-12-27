@@ -37,7 +37,7 @@ export default function CarouselComponent() {
       {banners ? (
         banners.map((b) => (
           <Carousel.Item key={b._id}>
-            <img className="d-block w-100" src={b.image} alt="First slide" />
+            <img className="d-block" src={b.image} alt="First slide" />
             <Carousel.Caption>
               <h3>{b.title}</h3>
               <p>{b.description}</p>

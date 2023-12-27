@@ -62,7 +62,7 @@ export default function NavBar() {
   };
   const [navbarClass, setNavbarClass] = useState("navbar-top");
 
-  useEffect(() => {
+  const checkPosition = () => {
     window.onscroll = () => {
       if (window.scrollY === 0) {
         setNavbarClass("navbar-top");
@@ -76,6 +76,10 @@ export default function NavBar() {
     };
 
     return () => (window.onscroll = null);
+  };
+
+  useEffect(() => {
+    checkPosition();
   }, []);
   useEffect(() => {
     dispatch(switchLanguageAction(language));
@@ -95,7 +99,7 @@ export default function NavBar() {
             className="navBarLogo"
           />
         </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav" onClick={scrollToTop} />
         <Navbar.Collapse id="basic-navbar-nav">
           {location.pathname === "/" ? (
             <Nav className="me-auto">

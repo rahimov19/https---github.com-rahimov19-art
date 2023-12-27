@@ -59,16 +59,24 @@ export default function Footer() {
                 <p>{languagePack[language].days}</p>
               </Col>
             </Col>
-            <Col xs={12} className="d-flex justify-content-between">
-              <div className="d-flex align-items-center">
+            <Row className="d-flex justify-content-between">
+              <Col
+                className="d-flex align-items-center"
+                xs={{ order: 1 }}
+                sm={4}
+              >
                 <img
                   src={languagePack[language].logo}
                   alt=""
                   className="footerLogo"
                 />
                 <p className="ms-3 mt-3">{languagePack[language].art2023}</p>
-              </div>
-              <div className="d-flex align-items-center">
+              </Col>
+              <Col
+                className="d-flex align-items-center"
+                xs={{ order: 3 }}
+                sm={8}
+              >
                 <h5>{languagePack[language].follow} </h5>{" "}
                 <Nav.Link
                   className="nav-link mx-3"
@@ -88,8 +96,8 @@ export default function Footer() {
                 >
                   <img src="/li.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>
-              </div>
-            </Col>
+              </Col>
+            </Row>
           </Row>
         </Container>
       </Navbar>
