@@ -44,7 +44,7 @@ export default function LoginModal() {
       <Modal
         className="artModal"
         show={show}
-        // onHide={handleClose}
+        onHide={handleClose}
         backdrop="static"
         keyboard={false}
       >
