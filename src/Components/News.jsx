@@ -13,6 +13,7 @@ import "swiper/css/pagination";
 
 export default function News() {
   const language = useSelector((state) => state.languages.currentLanguage);
+
   const languagePack = {
     ru: { news: "Другие новости" },
     en: { news: "More News" },
@@ -21,20 +22,8 @@ export default function News() {
   const dispatch = useDispatch();
 
   const stateNews = useSelector((state) => state.posts);
-  const [news, setNews] = useState([]);
-  const fetchData = async () => {
-    try {
-      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news`);
-      if (response.ok) {
-        let data = await response.json();
-        dispatch(getPostsAction(data));
-      } else {
-        console.log("error");
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const [news, setNews] = useState(null);
+
   useEffect(() => {
     if (stateNews.posts.length > 0) {
       setNews(stateNews.posts.filter((n) => n.language === language));
@@ -43,6 +32,21 @@ export default function News() {
   useEffect(() => {
     fetchData();
   }, []);
+  const fetchData = async () => {
+    try {
+      let response = await fetch(`${process.env.REACT_APP_BE_URL}/news`);
+      if (response.ok) {
+        let data = await response.json();
+        data.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+        dispatch(getPostsAction(data));
+        setNews(data.filter((n) => n.language === language));
+      } else {
+        console.log("error");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <Container className="my-5 newsContainer">
       <h2 className="newsH2">{languagePack[language].news}</h2>

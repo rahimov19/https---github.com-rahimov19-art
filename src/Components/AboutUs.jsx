@@ -9,21 +9,21 @@ export default function AboutUs() {
     ru: {
       logo: "/artlogo.png",
       aboutUsH2: "О Нас",
-      weAreArt: "Мы АРТ",
+      weAreArt: "Мы Ассоциация Рестораторов Таджикистана",
       artArticle:
         "Ассоциация Рестораторов Таджикистана (АРТ), недавно созданная некоммерческая организация, нацелена на поддержку развития ресторанного бизнеса в Таджикистане. Официально зарегистрирована 31 августа 2020 г. ",
     },
     en: {
       logo: "/artLogoEng.png",
       aboutUsH2: "About Us",
-      weAreArt: "We Are ART",
+      weAreArt: "We Are Association of Restaurateurs of Tajikistan",
       artArticle:
         "The Association of Restaurateurs of Tajikistan (ART), a newly established non-profit organization, aims to support the development of the restaurant business in Tajikistan. It was officially registered on August 31, 2020.",
     },
     tj: {
       logo: "/artlogoTaj.png",
       aboutUsH2: "Дар Бораи Мо",
-      weAreArt: "Мо АТТ хастем",
+      weAreArt: "Мо Ассотсиатсияи Тарабхонаҳои Тоҷикистон хастем",
       artArticle:
         "Ассотсиатсияи Тарабхонаҳои Тоҷикистон (АТТ), як созмони ғайритиҷоратии тозатаъсис, ҳадафи дастгирии рушди тиҷорати тарабхонаҳо дар Тоҷикистон аст. Он расман 31 августи соли 2020 ба қайд гирифта шудааст.",
     },

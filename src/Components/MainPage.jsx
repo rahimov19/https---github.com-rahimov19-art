@@ -12,9 +12,16 @@ import Courses from "./Courses";
 export default function MainPage() {
   const language = useSelector((state) => state.languages.currentLanguage);
   const languagePack = {
-    ru: { welcome: "Добро пожаловать в АРТ" },
-    en: { welcome: "Welcome to ART" },
-    tj: { welcome: "Хуш Омадед ба АТТ" },
+    ru: {
+      welcome: "Добро пожаловать на сайт Ассоциации Рестораторов Таджинистана",
+    },
+    en: {
+      welcome:
+        "Welcome to the webpage of Association of Restaurateurs of Tajikistan",
+    },
+    tj: {
+      welcome: "Хуш Омадед ба сайти Ассотсиатсияи Тарабхонаҳои Тоҷикистон",
+    },
   };
   return (
     <Container className="my-4">

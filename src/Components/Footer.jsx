@@ -80,13 +80,13 @@ export default function Footer() {
                 <h5>{languagePack[language].follow} </h5>{" "}
                 <Nav.Link
                   className="nav-link mx-3"
-                  href="https://www.instagram.com/art__tajikistan/"
+                  href="https://instagram.com/art__tajikistan?igshid=MzRlODBiNWFlZA=="
                 >
                   <img src="/ig.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>
                 <Nav.Link
                   className="nav-link mx-3"
-                  href="https://www.facebook.com/arip.tjk"
+                  href="https://www.facebook.com/profile.php?id=100070339742380&mibextid=LQQJ4d"
                 >
                   <img src="/fb.png" alt="" className="footerSocialLogo" />
                 </Nav.Link>

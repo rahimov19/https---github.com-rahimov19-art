@@ -29,6 +29,7 @@ export default function NavBar() {
       ourMembers: "Наши Члены",
       contactUs: "Контакты",
       backToTop: "Вверх",
+      art: "Ассоциация Рестораторов Таджикистана",
     },
     en: {
       logo: "/artLogoEng.png",
@@ -38,6 +39,7 @@ export default function NavBar() {
       ourMembers: "Our Members",
       contactUs: "Contact Us",
       backToTop: "Back to Top",
+      art: "Association of Restaurateurs of Tajikistan",
     },
     tj: {
       logo: "/artlogoTaj.png",
@@ -47,6 +49,7 @@ export default function NavBar() {
       ourMembers: "Аъзоёни Мо",
       contactUs: "Тамос",
       backToTop: "Ба Боло",
+      art: "Ассотсиатсияи Тарабхонадорони Точикистон",
     },
   };
   const dispatch = useDispatch();
@@ -83,6 +86,7 @@ export default function NavBar() {
   }, []);
   useEffect(() => {
     dispatch(switchLanguageAction(language));
+    document.title = languagePack[language].art;
   }, [language]);
   return (
     <Navbar
@@ -176,52 +180,28 @@ export default function NavBar() {
               {language === "en" ? (
                 <NavDropdown title="EN" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#" onClick={() => setLanguage("ru")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagRu.png" alt="" />
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" onClick={() => setLanguage("tj")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Tajikistan.PNG"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagTj.PNG" alt="" />
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : language === "ru" ? (
                 <NavDropdown title="RU" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#" onClick={() => setLanguage("en")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg/2560px-Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg.png"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagUk.jpg" alt="" />
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" onClick={() => setLanguage("tj")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Tajikistan.PNG"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagTj.PNG" alt="" />
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : language === "tj" ? (
                 <NavDropdown title="TJ" id="basic-nav-dropdown">
                   <NavDropdown.Item href="#" onClick={() => setLanguage("en")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg/2560px-Flag_of_the_United_Kingdom_%283-2_aspect_ratio%29.svg.png"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagUk.jpg" alt="" />
                   </NavDropdown.Item>
                   <NavDropdown.Item href="#" onClick={() => setLanguage("ru")}>
-                    <img
-                      className="flag"
-                      src="https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/800px-Flag_of_Russia.svg.png"
-                      alt=""
-                    />
+                    <img className="flag" src="/flagRu.png" alt="" />
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
