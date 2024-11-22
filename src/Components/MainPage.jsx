@@ -13,7 +13,7 @@ export default function MainPage() {
   const language = useSelector((state) => state.languages.currentLanguage);
   const languagePack = {
     ru: {
-      welcome: "Добро пожаловать на сайт Ассоциации Рестораторов Таджинистана",
+      welcome: "Добро пожаловать на сайт Ассоциации Рестораторов Таджикистана",
     },
     en: {
       welcome:
